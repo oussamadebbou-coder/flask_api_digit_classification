@@ -1,1 +1,41 @@
+
+digit-classification/
+│
+├── app.py
+├── llm_engine.py
+├── requirements.txt
+│
+│
+├── api/
+│   ├── __init__.py
+│   └── routes_digit.py
+│
+└── static/
+    └── swagger_digit.json (optionnel)
+
+
+
+
+            app.py
+   (create_app, lancement Flask)
+                │
+        importe et enregistre
+                │
+                ▼
+   api/routes_digit.py  (digit_api)
+   (Blueprint + route /digit_classification)
+                │
+        importe et utilise
+                │
+                ▼
+          llm_engine.py
+   (predict_digit_from_pixels)
+                │
+        charge le modèle
+                │
+                ▼
+      models/digit_cnn.h5
+   (modèle CNN entraîné MNIST)
+
+
 curl -X POST http://localhost:5000/api/digit_classification  -F "image=@5.png"

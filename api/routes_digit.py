@@ -74,3 +74,4 @@ def digit_classification():
     except Exception as e:
         # En prod, tu logguerais l'erreur au lieu de l'afficher directement
         return jsonify({"error": f"Erreur lors du traitement de l'image : {str(e)}"}), 500
+
